@@ -1,0 +1,50 @@
+.query-section {
+    background-image: url('../../assets/query.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .query-section h1 {
+    margin-bottom: 40px;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .faq-question {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
