@@ -28,10 +28,10 @@ const Navbar = () => {
         </div>
         <ul className="nav-list">
           <li className="nav-item"><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
-          <li className="nav-item"><Link to='quiz' smooth={true} offset={0} duration={500}>Quiz</Link></li>
-          <li className="nav-item"><Link to='chat' smooth={true} offset={0} duration={500}>Chat</Link></li>
+          <li className="nav-item"><Link to='quiz-container' smooth={true} offset={0} duration={500}>Quiz</Link></li>
+          <li className="nav-item"><Link to='chat-container' smooth={true} offset={0} duration={500}>Chat</Link></li>
           <li className="nav-item"><Link to='query-section' smooth={true} offset={0} duration={500}>Queries</Link></li>
-          <li className="nav-item"><Link to='about' smooth={true} offset={-100} duration={500}>About</Link></li>
+          <li className="nav-item"><Link to='about' smooth={true} offset={-80} duration={500}>About</Link></li>
           <li className="nav-item"><Link to='contact' smooth={true} offset={0} duration={500}>Contact us</Link></li>
           <li className="nav-item">
             <div onClick={toggleModal} className="nav-button">Login/Sign-Up</div>

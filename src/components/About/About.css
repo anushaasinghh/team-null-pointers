@@ -1,15 +1,18 @@
 .about{
+    background: rgb(105, 103, 103);
+    border-radius: 20px;
     margin: 100px auto;
     display: flex;
     align-items: centre;
     justify-content: space-between;
-    width: 90%;
+    width: 97%;
 }
 .about-left{
     flex-basis: 40%;
     position: relative;
 }
 .about-right{
+    align-items: left;
     flex-basis: 56%;
 }
 .about-img{
@@ -17,9 +20,10 @@
     border-radius: 10px;
 }
 .about h3{
+    margin-top: 50px;
     font-size: 16px;
     font-weight: 600;
-    color: #212EA0;
+    color: #030830;
 }
 .about h2{
     font-size: 20px;
@@ -28,6 +32,8 @@
     max-width: 400px;
 }
 .about p{
+    margin-top: 40px;
     color: #000;
     margin-bottom: 15px;
+    font-size: 16px;
 }

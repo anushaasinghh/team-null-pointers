@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './Hero.css';
-import NewPage from '../NewPage/NewPage'; 
+import OptionsPage from './OptionsPage/OptionsPage'; 
 
 const Hero = () => {
-  const [showNewPage, setShowNewPage] = useState(false);
+  const [showOptionsPage, setShowOptionsPage] = useState(false);
 
   const handleButtonClick = () => {
-    setShowNewPage(true); 
+    setShowOptionsPage(true);
   };
 
   return (
-    <div className='hero navbar'>
-      {showNewPage ? (
-        <NewPage /> 
+    <div className='hero'>
+      {showOptionsPage ? (
+        <OptionsPage /> 
       ) : (
         <div className='hero-text'>
           <h1>Explore Constitutional Knowledge and Receive Real-Time Legal Answers</h1>
@@ -21,7 +21,9 @@ const Hero = () => {
             Our platform provides detailed insights into constitutional law, making complex concepts accessible and easy to understand.
             Whether you're exploring your rights or seeking immediate legal advice, our interactive tools and chatbot are here to guide you every step of the way.
           </p>
-          <button className='hero-button' onClick={handleButtonClick}>Read the Constitution</button>
+          <button className='hero-button' onClick={handleButtonClick}>
+            Read the Constitution
+          </button>
         </div>
       )}
     </div>
