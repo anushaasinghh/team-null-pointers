@@ -8,6 +8,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 //import NewPage from './components/NewPage/NewPage';
 import Quiz from './components/Quiz/Quiz';
+import Querynew from './components/Querynew/Querynew';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Chat/>
      {/* <NewPage/> */}
       <Queries />
+      <Querynew/>
       <About />
       <Contact />
       <Footer />

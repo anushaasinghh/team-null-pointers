@@ -22,7 +22,7 @@ const Hero = () => {
             Whether you're exploring your rights or seeking immediate legal advice, our interactive tools and chatbot are here to guide you every step of the way.
           </p>
           <button className='hero-button' onClick={handleButtonClick}>
-            Read the Constitution
+            Read The Constitution of India
           </button>
         </div>
       )}

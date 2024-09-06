@@ -1,0 +1,54 @@
+.query-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.question-form, .reply-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.questions-list {
+    margin-top: 20px;
+}
+
+.question-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.replies {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reply-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #ce8b8b;
+}

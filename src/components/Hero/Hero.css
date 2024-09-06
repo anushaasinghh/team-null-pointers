@@ -104,6 +104,23 @@
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
+    gap:5px;
+    background-color: #f6f8fa;
+    color: rgb(3, 1, 1);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .hero-button + .hero-button {
+    margin-left: 20px;
+  }
+  .hero-button2{
+    border-radius: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    gap:5px;
     background-color: #f6f8fa;
     color: rgb(3, 1, 1);
     border: none;

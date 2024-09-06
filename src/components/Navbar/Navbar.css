@@ -28,32 +28,32 @@
     align-items: center;
 }
 .logo{
-    max-width: 150;
-    max-height: 70px;
+    max-width: 9.3rem;
+    max-height: 4.35rem;
     height: auto;
     margin-right:0;
 }
 .logosecond{
     margin-left: 0;
-    max-width: 200px;
-    max-height: 70px;
+    max-width: 12.5rem;
+    max-height: 4.37rem;
 
 }
 .nav-list{
     align-items: center;
     list-style-type: none;
     display: flex; 
-    font-size: 16px;
-    gap: 20px;
-    margin: 5px 20px;
+    font-size: 1.25rem;
+    gap: 1rem;
+    margin: 0.312rem 1.15rem;
     padding: 0;
 }
 
 .nav-item {
   align-items: center;
   cursor: pointer;
-  padding: 8px 5px;
-  font-size: 16px;
+  padding: 0.5rem 0.3rem;
+  font-size: 1rem;
   color: rgb(250, 250, 250); 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
 }
@@ -68,20 +68,21 @@
     color: rgb(250, 250, 250);
 } */
 .nav-button {
-    padding: 8px 12px;
-    font-size: 16px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
     background-color: rgb(248, 246, 246);
     color: black;
     border: none;
-    border-radius: 30px;
+    border-radius: 1.88rem;
     cursor: pointer;
+    margin-right: 1rem;
 }
 .nav-button:hover {
     background-color: #ddd;
 }
 .nav-item:hover{
     background-color: #494646;
-    border-radius: 4px;
+    border-radius: 0.25;
 }
 .modal-backdrop {
     position: fixed;
@@ -98,17 +99,17 @@
   
   .modal {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
     max-width: 400px;
     width: 90%;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.76rem rgba(0, 0, 0, 0.3);
   }
   
   .modal h2 {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0.76rem;
     color: #333;
     text-align: center;
   }
@@ -116,19 +117,19 @@
   .modal input[type="password"],
   .modal input[type="tel"] {
     width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #b8b6b6;
+    padding: 0.76rem;
+    margin: 0.76rem 0;
+    border: 0.065rem solid #b8b6b6;
     border-radius: 4px;
   }
   
   .modal button {
     width: 100%;
-    padding: 10px;
+    padding: 0.76rem;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -139,17 +140,17 @@
   
   .modal .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    top: 0.76rem;
+    right: 0.9rem;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #555;
   }
   .modal button {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.76rem 0;
+    padding: 0.76rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     background-color: #007BFF;
     color: white;
     cursor: pointer;
