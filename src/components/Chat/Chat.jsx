@@ -60,25 +60,25 @@ const Chat = () => {
 
   const renderInitialButtons = () => (
     <div className="quick-search">
-      <button onClick={() => setSelectedCategory('constitution')}>Constitution of India</button>
-      <button onClick={() => setSelectedCategory('nyaya')}>Bharatiya Nyaya Sanhita</button>
+      <button onClick={() => setSelectedCategory('constitution')}>THE_CONSTITUTION_OF_INDIA</button>
+      <button onClick={() => setSelectedCategory('nyaya')}>THE_BHARATIYA_NYAYA_SANHITA</button>
     </div>
   );
 
   const renderCategoryButtons = () => {
     const categoryButtons = {
       constitution: [
-        'Fundamental Rights',
+        'Fundamental_Rights',
         'Elections',
-        'Emergency Provisions',
-        'Finance, Property, Conyracts, and Suits',
-        'The Panchayats',
-        'Citizenship'
+        'Emergency_Provisions',
+        'Finance_Property_Conyracts_and_Suits',
+        'The_Panchayats',
+        'Trade_commerce_and_Intercourse_within_the_territory_of_INDIA'
       ],
       nyaya: [
-        'General Exceptions Of Abetment, Criminal Consipiracy And Attempt',
-        'Genral Exceptions Of Offences Against Women and Child Preliminiary Punishments',
-        'Genral Exceptions Of Punishments',
+        'GENERAL_EXCEPTIONS,
+        'OF_OFFENCES_AGAINST_WOMEN_AND_CHILD',
+        'OF_PUNISHMENTS','OF_ABETMENT_CRIMINAL_CONSPIRACY_AND_ATTEMPT',"PRELIMINARY'
       ],
     };
 
