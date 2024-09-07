@@ -418,7 +418,11 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
 
   const fetchTranslatedText = (language) => {
     setTimeout(() => {
-      setTranslatedText(`Translated text in ${language}`);
+      const prefix = `Translate this to ${language}\n\n`;
+      const response = await getOpenAIResponse(prefix+text);
+      console.log('API Response:', response); // Check the response structure
+      const translatedText = response.candidates[0].content.parts[0].text;
+      setTranslatedText(translatedText);
       setIsTranslating(false);
     }, 1000);
   };
@@ -442,7 +446,7 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
       const prompt = `Explain this using common words in reference with the Indian constitution\n\n\n${text}`;
       const response = await getOpenAIResponse(prompt);
       console.log('API Response:', response); // Check the response structure
-      const simplifiedText = response.choices[0]?.text || 'No simplified text found';
+      const simplifiedText = response.candidates[0].content.parts[0].text || 'No simplified text found';
       setSimplifiedText(simplifiedText);
     } catch (error) {
       console.error('Error simplifying text:', error);
