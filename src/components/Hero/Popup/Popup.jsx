@@ -412,12 +412,12 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
   const handleLanguageSelect = (language) => {
     setSelectedLanguage(language);
     setShowTranslateOptions(false);
-    setIsTranslating(true);``
+    setIsTranslating(true);
     fetchTranslatedText(language);
   };
 
   const fetchTranslatedText = (language) => {
-    setTimeout(() => {
+    setTimeout(async () =>{
       const prefix = `Translate this to ${language}\n\n`;
       const response = await getOpenAIResponse(prefix+text);
       console.log('API Response:', response); // Check the response structure
@@ -444,6 +444,7 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
     setLoading(true);
     try {
       const prompt = `Explain this using common words in reference with the Indian constitution\n\n\n${text}`;
+      console.log("harsh");
       const response = await getOpenAIResponse(prompt);
       console.log('API Response:', response); // Check the response structure
       const simplifiedText = response.candidates[0].content.parts[0].text || 'No simplified text found';
@@ -467,6 +468,7 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
         <button onClick={handleSimplify} disabled={loading}>
           {loading ? 'Simplifying...' : 'Simplify'}
         </button>
+        {console.log("inside component")}
         {error && <p className='error-text'>{error}</p>}
         {responseText && <p>{responseText}</p>}
         {simplifiedText && <p>{simplifiedText}</p>}
