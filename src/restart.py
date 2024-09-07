@@ -56,7 +56,7 @@ def chatbot_response(user_input, user_id):
         article = search_article_by_no(collection, art_no)
         if article:
             # Return the full document (article) found
-            return f"Article No: {article.get('ArtNo')}\nName: {article.get('Name')}\nDescription: {article.get('ArtDesc', 'No Description')}"
+            return f"Article No: {article.get('ArtNo')}\nName: {article.get('Name')}\nDescription: {article.get('ArtDesc', 'No Description')}\nClauses: {article.get('Clauses','No Clauses')}"
         else:
             return f"Sorry, no article found with the number {art_no} in {sub_option}."
     
