@@ -1,4 +1,4 @@
-// // // // import axios from 'axios';
+import axios from 'axios';
 
 // // // // const API_KEY = "AIzaSyBTBvMU7QrAX6aO4uU7ufz6E9BlL-044zU";
 
@@ -124,51 +124,51 @@
 //   },
 // });
 
-// export const getOpenAIResponse = async (prompt) => {
-//   try {
-//     const response = await axios.post(
-//       'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
-//       {
-//         contents: [{ parts: [{ text: prompt }] }],
-//       },
-//       {
-//         headers: {
-//           'Content-Type': 'application/json',
-//           'Authorization': `Bearer ${API_KEY}`,
-//         },
-//       }
-//     );
-//     return response.data;
-//   } catch (error) {
-//     console.error('Error fetching response from OpenAI:', error.response ? error.response.data : error.message);
-//     throw error; // Rethrow the error to be caught in the component
-//   }
-// };
-
-
-import axios from 'axios';
-
-// Replace this with your actual OpenAI API key
-const API_KEY = 'YAIzaSyBX4TlvwTahyCGE9CgTCWVQsVTI68RhIGo';
-
-const openai = axios.create({
-  baseURL: 'https://api.openai.com/v1',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${API_KEY}`,
-  },
-});
-
 export const getOpenAIResponse = async (prompt) => {
   try {
-    const response = await openai.post('/v1/chat/completions', {
-      prompt: prompt,
-      max_tokens: 150, 
-      temperature: 0.7, 
-    });
+    const response = await axios.post(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
+      {
+        contents: [{ parts: [{ text: prompt }] }],
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`,
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     console.error('Error fetching response from OpenAI:', error.response ? error.response.data : error.message);
     throw error; // Rethrow the error to be caught in the component
   }
 };
+
+
+// import axios from 'axios';
+
+// // Replace this with your actual OpenAI API key
+// const API_KEY = 'YAIzaSyBX4TlvwTahyCGE9CgTCWVQsVTI68RhIGo';
+
+// const openai = axios.create({
+//   baseURL: 'https://api.openai.com/v1',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${API_KEY}`,
+//   },
+// });
+
+// export const getOpenAIResponse = async (prompt) => {
+//   try {
+//     const response = await openai.post('/v1/chat/completions', {
+//       prompt: prompt,
+//       max_tokens: 150, 
+//       temperature: 0.7, 
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error fetching response from OpenAI:', error.response ? error.response.data : error.message);
+//     throw error; // Rethrow the error to be caught in the component
+//   }
+// };
