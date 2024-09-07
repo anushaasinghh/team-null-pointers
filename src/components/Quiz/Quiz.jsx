@@ -824,60 +824,288 @@ const advancedQuestions = [
 ];
 
 
+// const Quiz = () => {
+//     const [quizLevel, setQuizLevel] = useState(null);
+//     const [questions, setQuestions] = useState([]);
+//     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+//     const [score, setScore] = useState(0);
+//     const [selectedAnswer, setSelectedAnswer] = useState(null);
+//     const [answerStatus, setAnswerStatus] = useState(null); 
+
+//     const startQuiz = (level) => {
+//         switch(level) {
+//           case 'beginner':
+//             setQuestions(beginnerQuestions);
+//             break;
+//           case 'intermediate':
+//             setQuestions(intermediateQuestions);
+//             break;
+//           case 'advanced':
+//             setQuestions(advancedQuestions);
+//             break;
+//           default:
+//             break;
+//         }
+//         setQuizLevel(level);
+//         setCurrentQuestionIndex(0);
+//         setScore(0);
+//         setSelectedAnswer(null);
+//         setAnswerStatus(null); 
+//     };
+  
+//     const handleAnswerClick = (answer) => {
+//         if (selectedAnswer !== null) return; 
+
+//         const isCorrect = answer.correct;
+//         setSelectedAnswer(answer);
+//         setAnswerStatus(isCorrect ? 'correct' : 'incorrect'); 
+
+//         if (isCorrect) {
+//             setScore(score + 1);
+//         }
+
+//         setTimeout(() => {
+//             if (currentQuestionIndex < questions.length - 1) {
+//                 setCurrentQuestionIndex(currentQuestionIndex + 1);
+//                 setSelectedAnswer(null);
+//                 setAnswerStatus(null); 
+//             } else {
+//                 alert(`Quiz finished! You scored ${score + (isCorrect ? 1 : 0)} out of ${questions.length}`);
+//                 setQuizLevel(null); 
+//             }
+//         }, 1000); 
+//     };
+
+//     const goBack = () => {
+//         setQuizLevel(null);
+//     };
+  
+//     const currentQuestion = questions[currentQuestionIndex];
+  
+//     return (
+//       <div className="quiz-container">
+//         {quizLevel !== null && (
+//           <button className="go-back-button" onClick={goBack}>
+//             Go Back
+//           </button>
+//         )}
+//         {quizLevel === null ? (
+//           <div className="quiz-selection">
+//             <h2>Select a Quiz Level</h2>
+//             <div className="level-container">
+//               <div className="level">
+//                 <img src={Beginner} alt='Beginner' />
+//                 <button onClick={() => startQuiz('beginner')}>Beginner</button>
+//                 </div>
+//                 <div className="level">
+//               <img src={Intermediate} alt='Intermediate' />
+//                 <button onClick={() => startQuiz('intermediate')}>Intermediate</button>
+//                 </div>
+//                 <div className="level">
+//                 <img src={Advance} alt='Advance' />
+//                 <button onClick={() => startQuiz('advance')}>Advance</button>
+//                 </div>
+//             </div>
+//           </div>
+//         ) : (
+//             <div className="quiz">
+//             <h2>{currentQuestion.question}</h2>
+//             <div className="answers">
+//               {currentQuestion.answers.map((answer, index) => (
+//                 <button
+//                   key={index}
+//                   className={`answer-button ${selectedAnswer && selectedAnswer.text === answer.text ? answerStatus : ''}`}
+//                   onClick={() => handleAnswerClick(answer)}
+//                   disabled={selectedAnswer !== null} 
+//                 >
+//                   {answer.text}
+//                 </button>
+//               ))}
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     );
+// };
+  
+// export default Quiz;
+
+
+// const Quiz = () => {
+//     const [quizLevel, setQuizLevel] = useState(null);
+//     const [questions, setQuestions] = useState([]);
+//     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+//     const [score, setScore] = useState(0);
+//     const [selectedAnswer, setSelectedAnswer] = useState(null);
+//     const [correctAnswer, setCorrectAnswer] = useState(null);
+  
+//     const startQuiz = (level) => {
+//       switch(level) {
+//         case 'beginner':
+//           setQuestions(beginnerQuestions);
+//           break;
+//         case 'intermediate':
+//           setQuestions(intermediateQuestions);
+//           break;
+//         case 'advanced':
+//           setQuestions(advancedQuestions);
+//           break;
+//         default:
+//           break;
+//       }
+//       setQuizLevel(level);
+//       setCurrentQuestionIndex(0);
+//       setScore(0);
+//       setSelectedAnswer(null);
+//       setCorrectAnswer(null);
+//     };
+  
+//     const handleAnswerClick = (answer) => {
+//       if (selectedAnswer !== null) return;
+  
+//       const isCorrect = answer.correct;
+//       setSelectedAnswer(answer.text);
+//       setCorrectAnswer(questions[currentQuestionIndex].answers.find(a => a.correct).text);
+  
+//       if (isCorrect) {
+//         setScore(score + 1);
+//       }
+  
+//       setTimeout(() => {
+//         if (currentQuestionIndex < questions.length - 1) {
+//           setCurrentQuestionIndex(currentQuestionIndex + 1);
+//           setSelectedAnswer(null);
+//           setCorrectAnswer(null);
+//         } else {
+//           alert(`Quiz finished! You scored ${score + (isCorrect ? 1 : 0)} out of ${questions.length}`);
+//           setQuizLevel(null);
+//         }
+//       }, 1000);
+//     };
+  
+//     const goBack = () => {
+//       setQuizLevel(null);
+//     };
+  
+//     const currentQuestion = questions[currentQuestionIndex];
+  
+//     return (
+//       <div className="quiz-container">
+//         {quizLevel !== null && (
+//           <button className="go-back-button" onClick={goBack}>
+//             Go Back
+//           </button>
+//         )}
+//         {quizLevel === null ? (
+//           <div className="quiz-selection">
+//             <h2>Select a Quiz Level</h2>
+//             <div className="level-container">
+//               <div className="level">
+//                 <img src={Beginner} alt='Beginner' />
+//                 <button onClick={() => startQuiz('beginner')}>Beginner</button>
+//               </div>
+//               <div className="level">
+//                 <img src={Intermediate} alt='Intermediate' />
+//                 <button onClick={() => startQuiz('intermediate')}>Intermediate</button>
+//               </div>
+//               <div className="level">
+//                 <img src={Advance} alt='Advance' />
+//                 <button onClick={() => startQuiz('advanced')}>Advanced</button>
+//               </div>
+//             </div>
+//           </div>
+//         ) : (
+//           <div className="quiz">
+//             <h2>{currentQuestion.question}</h2>
+//             <div className="answers">
+//               {currentQuestion.answers.map((answer, index) => (
+//                 <button
+//                   key={index}
+//                   className={`answer-button ${selectedAnswer ? (answer.correct ? 'correct' : 'incorrect') : ''} ${
+//                     selectedAnswer && selectedAnswer === answer.text ? (answer.correct ? 'correct' : 'incorrect') : ''
+//                   }`}
+//                   onClick={() => handleAnswerClick(answer)}
+//                   disabled={selectedAnswer !== null}
+//                 >
+//                   {answer.text}
+//                 </button>
+//               ))}
+//             </div>
+//             {correctAnswer && (
+//               <div className="correct-answer">
+//                 Correct Answer: {correctAnswer}
+//               </div>
+//             )}
+//           </div>
+//         )}
+//       </div>
+//     );
+//   };
+  
+//   export default Quiz;
+
 const Quiz = () => {
     const [quizLevel, setQuizLevel] = useState(null);
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const [answerStatus, setAnswerStatus] = useState(null); 
-
+    const [correctAnswer, setCorrectAnswer] = useState(null);
+  
     const startQuiz = (level) => {
-        switch(level) {
-          case 'beginner':
-            setQuestions(beginnerQuestions);
-            break;
-          case 'intermediate':
-            setQuestions(intermediateQuestions);
-            break;
-          case 'advanced':
-            setQuestions(advancedQuestions);
-            break;
-          default:
-            break;
-        }
-        setQuizLevel(level);
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        setSelectedAnswer(null);
-        setAnswerStatus(null); 
+      switch(level) {
+        case 'beginner':
+          setQuestions(beginnerQuestions);
+          break;
+        case 'intermediate':
+          setQuestions(intermediateQuestions);
+          break;
+        case 'advanced':
+          setQuestions(advancedQuestions);
+          break;
+        default:
+          break;
+      }
+      setQuizLevel(level);
+      setCurrentQuestionIndex(0);
+      setScore(0);
+      setSelectedAnswer(null);
+      setCorrectAnswer(null);
     };
   
     const handleAnswerClick = (answer) => {
-        if (selectedAnswer !== null) return; 
-
-        const isCorrect = answer.correct;
-        setSelectedAnswer(answer);
-        setAnswerStatus(isCorrect ? 'correct' : 'incorrect'); 
-
-        if (isCorrect) {
-            setScore(score + 1);
-        }
-
-        setTimeout(() => {
-            if (currentQuestionIndex < questions.length - 1) {
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setSelectedAnswer(null);
-                setAnswerStatus(null); 
-            } else {
-                alert(`Quiz finished! You scored ${score + (isCorrect ? 1 : 0)} out of ${questions.length}`);
-                setQuizLevel(null); 
-            }
-        }, 1000); 
+      if (selectedAnswer !== null) return;
+  
+      const isCorrect = answer.correct;
+      setSelectedAnswer(answer.text);
+      setCorrectAnswer(questions[currentQuestionIndex].answers.find(a => a.correct).text);
+  
+      if (isCorrect) {
+        setScore(score + 1);
+      }
     };
-
-    const goBack = () => {
+  
+    const handleNext = () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedAnswer(null);
+        setCorrectAnswer(null);
+      } else {
+        alert(`Quiz finished! You scored ${score + (selectedAnswer === correctAnswer ? 1 : 0)} out of ${questions.length}`);
         setQuizLevel(null);
+      }
+    };
+  
+    const handlePrevious = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+        setSelectedAnswer(null);
+        setCorrectAnswer(null);
+      }
+    };
+  
+    const goBack = () => {
+      setQuizLevel(null);
     };
   
     const currentQuestion = questions[currentQuestionIndex];
@@ -896,36 +1124,59 @@ const Quiz = () => {
               <div className="level">
                 <img src={Beginner} alt='Beginner' />
                 <button onClick={() => startQuiz('beginner')}>Beginner</button>
-                </div>
-                <div className="level">
-              <img src={Intermediate} alt='Intermediate' />
+              </div>
+              <div className="level">
+                <img src={Intermediate} alt='Intermediate' />
                 <button onClick={() => startQuiz('intermediate')}>Intermediate</button>
-                </div>
-                <div className="level">
+              </div>
+              <div className="level">
                 <img src={Advance} alt='Advance' />
-                <button onClick={() => startQuiz('advance')}>Advance</button>
-                </div>
+                <button onClick={() => startQuiz('advanced')}>Advanced</button>
+              </div>
             </div>
           </div>
         ) : (
-            <div className="quiz">
+          <div className="quiz">
             <h2>{currentQuestion.question}</h2>
             <div className="answers">
               {currentQuestion.answers.map((answer, index) => (
                 <button
                   key={index}
-                  className={`answer-button ${selectedAnswer && selectedAnswer.text === answer.text ? answerStatus : ''}`}
+                  className={`answer-button ${selectedAnswer ? (answer.correct ? 'correct' : 'incorrect') : ''} ${
+                    selectedAnswer && selectedAnswer === answer.text ? (answer.correct ? 'correct' : 'incorrect') : ''
+                  }`}
                   onClick={() => handleAnswerClick(answer)}
-                  disabled={selectedAnswer !== null} 
+                  disabled={selectedAnswer !== null}
                 >
                   {answer.text}
                 </button>
               ))}
             </div>
+            {correctAnswer && (
+              <div className="correct-answer">
+                Correct Answer: {correctAnswer}
+              </div>
+            )}
+            <div className="navigation-buttons">
+              <button
+                className="nav-button"
+                onClick={handlePrevious}
+                disabled={currentQuestionIndex === 0}
+              >
+                Go Back
+              </button>
+              <button
+                className="nav-button"
+                onClick={handleNext}
+                disabled={selectedAnswer === null}
+              >
+                {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+              </button>
+            </div>
           </div>
         )}
       </div>
     );
-};
+  };
   
-export default Quiz;
+  export default Quiz;

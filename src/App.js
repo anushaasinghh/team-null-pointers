@@ -8,7 +8,8 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 //import NewPage from './components/NewPage/NewPage';
 import Quiz from './components/Quiz/Quiz';
-import Querynew from './components/Querynew/Querynew';
+//import Querynew from './components/Querynew/Querynew';
+import LawyersOnboard from './components/Queries/LawyersOnboard/LawyersOnboard';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
       <Chat/>
      {/* <NewPage/> */}
       <Queries />
-      <Querynew/>
+     {/* <Querynew/> */}
+     <LawyersOnboard />
       <About />
       <Contact />
       <Footer />

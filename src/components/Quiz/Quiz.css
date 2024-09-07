@@ -1,107 +1,56 @@
-.quiz-container {
-  background-color: black;
+/* .quiz-container {
   text-align: center;
-  color: white;
+  max-width: 100%; 
+  margin: 40px 4opx; 
   padding: 20px;
-  position: relative;
-}
-.go-back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  color: white;
-  border: none;
-  background-color: #978787;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.go-back-button:hover {
-  background-color: #555;
+  background-color: rgb(219, 218, 218);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .quiz-selection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.quiz-selection .level-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.quiz-selection .level-container .level {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 20px;
 }
 
-.quiz-selection .level-container img {
-  width: 200px;
-  height: 200px;
-  display: block;
-  border-radius: 0;
+.level-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.level {
+  text-align: center;
+}
+
+.level img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
-.quiz-selection .level-container button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  color: white;
-  border: none;
-  background-color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+.go-back-button {
+  margin-bottom: 40px;
 }
-
-.quiz-selection .level-container button:hover {
-  background-color: #555;
+.go-back-button:hover{
+  background-color: rgb(85, 82, 82);
 }
 
 .quiz {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.quiz h2 {
-  margin-bottom: 20px;
-}
-
-.answers {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 20px;
 }
 
 .answer-button {
   display: block;
-  border-radius: 20px;
   margin: 10px auto;
-  padding: 15px 25px;
-  font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
-  background-color: #aa6161;
-  color: white;
+  padding: 10px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.answer-button:hover {
-  background-color: #666;
+  font-size: 16px;
+  width: 100%; 
+  max-width: 300px; 
 }
 
 .answer-button.correct {
@@ -114,15 +63,124 @@
   color: white;
 }
 
-.answer-button:disabled {
+.correct-answer {
+  margin-top: 20px;
+  font-size: 18px;
+  color: blue;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+}
+
+/* .nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #007bff;
+} */
+
+/*.nav-button:disabled {
+  background-color: #6c757d;
   cursor: not-allowed;
-  opacity: 0.6;
+} */
+.quiz-container {
+  text-align: center;
+  max-width: 100%; /* Increase width of the quiz section */
+  max-height: 1600px;
+  margin: auto; /* Center the quiz section */
+  padding: 20px;
+  background-color: rgb(202, 198, 198);
 }
 
-.answer-button.correct:disabled {
+.quiz-selection {
+  margin: 20px;
+}
+
+.level-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.level {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.level img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.level button {
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.go-back-button {
+  margin-bottom: 20px;
+  background-color: #6c757d;
+  color: black;
+}
+.go-back-button:hover{
+  background-color: blue;
+}
+.quiz {
+  margin-top: 20px;
+}
+
+.answer-button {
+  display: block;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Make buttons full width within container */
+  max-width: 300px; /* Limit the width of buttons */
+}
+
+.answer-button.correct {
   background-color: green;
+  color: white;
 }
 
-.answer-button.incorrect:disabled {
+.answer-button.incorrect {
   background-color: red;
+  color: white;
+}
+
+.correct-answer {
+  margin-top: 20px;
+  font-size: 18px;
+  color: blue;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #007bff;
+}
+
+.nav-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }

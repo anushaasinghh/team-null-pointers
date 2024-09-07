@@ -70,7 +70,7 @@
 .nav-button {
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
-    background-color: rgb(248, 246, 246);
+    background-color: rgb(156, 153, 153);
     color: black;
     border: none;
     border-radius: 1.88rem;
@@ -126,7 +126,7 @@
   .modal button {
     width: 100%;
     padding: 0.76rem;
-    background-color: #007BFF;
+    background-color: #6086c0;
     color: white;
     border: none;
     border-radius: 0.25rem;
