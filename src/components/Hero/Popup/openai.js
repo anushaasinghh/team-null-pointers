@@ -124,7 +124,10 @@ import axios from 'axios';
 //   },
 // });
 
+const API_KEY = "AIzaSyCPbrkibM6pmIDBt3RAdZ1phQs-sgNnPdM";
 export const getOpenAIResponse = async (prompt) => {
+  console.log ("xyz");
+  console.log(API_KEY);
   try {
     const response = await axios.post(
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
