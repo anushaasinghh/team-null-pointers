@@ -62,11 +62,12 @@
 
 .quick-search button {
   background-color: #fff;
-  color: #333;
+  color: black;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 10px;
   flex: 1 1 calc(50% - 20px);
   max-width: 200px;
   text-align: center;
