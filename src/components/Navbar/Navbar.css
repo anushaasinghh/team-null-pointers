@@ -11,7 +11,7 @@
   z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 } */
- .navbar{
+ /*.navbar{
     width: 100%;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
     font-size: 16px;
     color: rgb(250, 250, 250);
 } */
-.nav-button {
+/*.nav-button {
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
     background-color: rgb(156, 153, 153);
@@ -159,4 +159,159 @@
   
   .modal button:hover {
     background-color: #0056b3;
+  }*/
+
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 5%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 9.3rem;
+    max-height: 4.35rem;
+    height: auto;
+    margin-right: 0;
+  }
+  
+  .logosecond {
+    margin-left: 0;
+    max-width: 12.5rem;
+    max-height: 4.37rem;
+  }
+  
+  .nav-list {
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    font-size: 1.25rem;
+    gap: 1rem;
+    margin: 0.312rem 1.15rem;
+    padding: 0;
+  }
+  
+  .nav-item {
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 0.3rem;
+    font-size: 1rem;
+    color: rgb(250, 250, 250);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .nav-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    background-color: rgb(156, 153, 153);
+    color: black;
+    border: none;
+    border-radius: 1.88rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .nav-button:hover {
+    background-color: #ddd;
+  }
+  
+  .nav-item:hover {
+    background-color: #494646;
+    border-radius: 0.25;
+  }
+  
+  /* Dropdown Menu for Notifications */
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+  
+  .dropdown-menu p {
+    margin: 0;
+    padding: 0.5rem;
+    color: #333;
+  }
+  
+  /* Modal styles */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  .modal {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 0.25rem 0.76rem rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+    margin-bottom: 0.76rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .modal input[type="text"],
+  .modal input[type="password"],
+  .modal input[type="tel"] {
+    width: 90%;
+    padding: 0.76rem;
+    margin: 0.76rem 0;
+    border: 0.065rem solid #b8b6b6;
+    border-radius: 4px;
+  }
+  
+  .modal button {
+    width: 100%;
+    padding: 0.76rem;
+    background-color: #6086c0;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3;
+  }
+  
+  .modal .close-btn {
+    position: absolute;
+    top: 0.76rem;
+    right: 0.9rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
   }
