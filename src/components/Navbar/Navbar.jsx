@@ -83,7 +83,8 @@ export default Navbar;
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/Nyay_Mitra.png';
-import logo2 from '../../assets/Nyay_Mitra_2-removebg-preview.png';
+//import logo2 from '../../assets/Nyay_Mitra_2-removebg-preview.png';
+import logo2 from '../../assets/Nyay_Mitra__2_-removebg-preview.png';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
@@ -115,13 +116,13 @@ const Navbar = () => {
         </div>
         <ul className="nav-list">
           <li className="nav-item"><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
-          <li className="nav-item"><Link to='quiz-container' smooth={true} offset={0} duration={500}>Quiz</Link></li>
-          <li className="nav-item"><Link to='chat-container' smooth={true} offset={0} duration={500}>Chat</Link></li>
+          <li className="nav-item"><Link to='quiz-container' smooth={true} offset={0} duration={500}>Games</Link></li>
+          <li className="nav-item"><Link to='chat-content' smooth={true} offset={0} duration={500}>Chat</Link></li>
           <li className="nav-item"><Link to='query-section' smooth={true} offset={0} duration={500}>Queries</Link></li>
           <li className="nav-item"><Link to='about' smooth={true} offset={-80} duration={500}>About</Link></li>
           <li className="nav-item"><Link to='contact' smooth={true} offset={0} duration={500}>Contact us</Link></li>
           <li className="nav-item">
-            <div onClick={toggleNotification} className="nav-button">Notifications</div>
+            <div onClick={toggleNotification} className="nav-button">Updates</div>
             {isNotificationOpen && (
               <div className="dropdown-menu">
                 <p>No new updates</p>

@@ -108,7 +108,7 @@
 
 // export default ProblemForm;
 
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import './LawyersOnboard.css';
 
 const ProblemForm = () => {
@@ -210,4 +210,87 @@ const ProblemForm = () => {
   );
 };
 
+export default ProblemForm; */
+
+
+import React, { useState } from 'react';
+import './LawyersOnboard.css';
+
+const ProblemForm = () => {
+  const [userEmail, setUserEmail] = useState('');
+  const [problemCategory, setProblemCategory] = useState('');
+  const [problemDescription, setProblemDescription] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState(''); // New state for submission message
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Validation
+    if (!userEmail || !problemCategory || !problemDescription) {
+      setSubmissionMessage('Please fill in all fields before submitting.');
+      return;
+    }
+
+    setLoading(true);
+    setSubmissionMessage(''); // Reset message on new submission
+
+    // Simulate a delay to mimic the loading state
+    setTimeout(() => {
+      setLoading(false);
+      // Set success message
+      setSubmissionMessage('Your problem has been submitted successfully.');
+
+      // Clear form fields
+      setUserEmail('');
+      setProblemCategory('');
+      setProblemDescription('');
+    }, 1000); // Simulate 1-second delay for form submission
+  };
+
+  return (
+    <div className="problem-form-container">
+      <h2>Connect with Our Certified Experts</h2>
+      <form onSubmit={handleSubmit} id="problem-form">
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            id="user-email"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Problem Category:</label>
+          <input
+            type="text"
+            id="problem-category"
+            value={problemCategory}
+            onChange={(e) => setProblemCategory(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Problem Description:</label>
+          <textarea
+            id="problem-description"
+            value={problemDescription}
+            onChange={(e) => setProblemDescription(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Loading...' : 'Submit Problem'}
+        </button>
+      </form>
+
+      {/* Display the submission message conditionally */}
+      {submissionMessage && <p className="submission-message">{submissionMessage}</p>}
+    </div>
+  );
+};
+
 export default ProblemForm;
+

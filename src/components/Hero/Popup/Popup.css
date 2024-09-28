@@ -1,5 +1,5 @@
 
-.popup-overlay {
+/*.popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -65,5 +65,288 @@
   .popup-content .error-text {
     color: red;
     margin-top: 10px;
+  } */
+
+  /*.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
   }
   
+  .popup-content {
+    width: 90%; 
+    font-size: 1rem;
+    max-width: 1000px; 
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+    position: relative; 
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f44;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .popup-close:hover {
+    background: #d33;
+  }
+  
+  .popup-content button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: skyblue;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .popup-content button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .popup-content button:hover:not(:disabled) {
+    background-color: #1a679b;
+  }
+  
+  .popup-content .error-text {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .text-area {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .translate-options {
+    margin-top: 10px;
+  }
+  
+  .translate-options button {
+    margin-right: 10px;
+  }*/
+  
+  /* src/components/Hero/Popup/Popup.css */
+
+/*.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.popup-content {
+  width: 90%; 
+  font-size: 1rem;
+  max-width: 1000px; 
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; 
+  position: relative; 
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px; 
+  right: 15px;
+  background: #f44;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.popup-close:hover {
+  background: #d33;
+}
+
+.popup-content button {
+  margin: 10px 5px 10px 0; 
+  padding: 10px 20px;
+  background-color: skyblue;
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.popup-content button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.popup-content button:hover:not(:disabled) {
+  background-color: #1a679b;
+}
+
+.popup-content .error-text {
+  color: red;
+  margin-top: 10px;
+}
+
+.text-area {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.stop-button {
+  background-color: #ff6347; 
+  color: #fff;
+}
+
+.stop-button:hover:not(:disabled) {
+  background-color: #d12f2f;
+}
+
+.translate-options {
+  margin-top: 10px;
+}
+
+.translate-options button {
+  margin-right: 10px;
+}*/
+
+/* src/components/Hero/Popup/Popup.css */
+
+/* src/components/Hero/Popup/Popup.css */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.popup-content {
+  width: 90%; /* Increased from 80% to 90% for better spacing */
+  font-size: 1rem;
+  max-width: 1000px; /* Increased from 800px to 1000px */
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px; /* Increased padding for better spacing */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; 
+  position: relative; 
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px; /* Adjusted for increased padding */
+  right: 15px; /* Adjusted for increased padding */
+  background: #f44;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px; /* Increased font size for better visibility */
+}
+
+.popup-close:hover {
+  background: #d33;
+}
+
+.popup-content button {
+  margin: 10px 5px 10px 0; /* Increased margin for better spacing */
+  padding: 10px 20px;
+  background-color: skyblue;
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.popup-content button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.popup-content button:hover:not(:disabled) {
+  background-color: #1a679b;
+}
+
+.popup-content .error-text {
+  color: red;
+  margin-top: 10px;
+}
+
+.text-area {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.translate-options {
+  margin-top: 10px;
+}
+
+.translate-options button {
+  margin-right: 10px;
+}
+
+/* *** New CSS for Stop Button *** */
+.stop-button {
+  background-color: #ff6347; /* Tomato color */
+  color: #fff;
+}
+
+.stop-button:hover:not(:disabled) {
+  background-color: #d12f2f;
+}
+

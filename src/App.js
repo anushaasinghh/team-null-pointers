@@ -17,10 +17,10 @@ const App = () => {
       <Navbar />
       <Hero />
       <Quiz/>
-      <Chat/>
-     {/* <NewPage/> */}
+      <Chat/> 
+     
       <Queries />
-     {/* <Querynew/> */}
+
      <LawyersOnboard />
       <About />
       <Contact />
@@ -30,3 +30,4 @@ const App = () => {
 };
 
 export default App;
+

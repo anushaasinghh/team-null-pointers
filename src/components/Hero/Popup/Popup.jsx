@@ -388,9 +388,9 @@
 // export default Popup;
 
 
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import './Popup.css'; 
-import { getOpenAIResponse } from './openai'; // Ensure correct import path
+import { getOpenAIResponse } from './openai'; 
 
 const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
   const [isTranslating, setIsTranslating] = useState(false);
@@ -496,4 +496,456 @@ const Popup = ({ text, handleFetchResponse, error, responseText, onClose }) => {
   );
 };
 
+export default Popup; */
+
+
+
+/*import React, { useState } from 'react';
+import './Popup.css'; 
+
+const Popup = ({ text, onClose }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showTranslateOptions, setShowTranslateOptions] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [translatedText, setTranslatedText] = useState('');
+  const [simplifiedText, setSimplifiedText] = useState('');
+
+  // Predefined simplified text and translations
+  const predefinedSimplifiedText = "This is the simplified version of the Constitution text.";
+  const predefinedTranslations = {
+    Hindi: "यह संविधान पाठ का सरल संस्करण है।",
+    Bengali: "এটি সংবিধানের সরলীকৃত সংস্করণ।",
+    Urdu: "یہ آئین کے متن کا آسان ورژن ہے۔"
+  };
+
+  const handleSimplify = () => {
+    // Set the predefined simplified text
+    setSimplifiedText(predefinedSimplifiedText);
+  };
+
+  const handleTranslate = () => {
+    setShowTranslateOptions(!showTranslateOptions);
+  };
+
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+    // Set the predefined translated text based on selected language
+    setTranslatedText(predefinedTranslations[language] || '');
+    setShowTranslateOptions(false);
+  };
+
+  const handleSpeak = () => {
+    if ('speechSynthesis' in window) {
+      setIsSpeaking(true);
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Text-to-speech is not supported in this browser.');
+    }
+  };
+
+  return (
+    <div className='popup-overlay'>
+      <div className='popup-content'>
+        <button className='popup-close' onClick={onClose} aria-label="Close Popup">X</button>
+        <h3>The Constitution of India</h3>
+        <p>{text}</p>
+        
+        
+        <button onClick={handleSimplify} aria-label="Simplify Text">
+          Simplify
+        </button>
+        {simplifiedText && (
+          <textarea 
+            className='text-area'
+            value={simplifiedText}
+            readOnly
+            rows={4}
+            aria-label="Simplified Text"
+          />
+        )}
+
+       
+        <button onClick={handleTranslate} aria-label="Translate Text">
+          Translate
+        </button>
+        {showTranslateOptions && (
+          <div className='translate-options'>
+            <button onClick={() => handleLanguageSelect('Hindi')} aria-label="Translate to Hindi">Hindi</button>
+            <button onClick={() => handleLanguageSelect('Bengali')} aria-label="Translate to Bengali">Bengali</button>
+            <button onClick={() => handleLanguageSelect('Urdu')} aria-label="Translate to Urdu">Urdu</button>
+          </div>
+        )}
+        {selectedLanguage && (
+          <textarea 
+            className='text-area'
+            value={translatedText}
+            readOnly
+            rows={4}
+            aria-label={`Translated Text in ${selectedLanguage}`}
+          />
+        )}
+
+        
+        <button onClick={handleSpeak} disabled={isSpeaking} aria-label="Speak Text">
+          {isSpeaking ? 'Speaking...' : 'Speak'}
+        </button>
+
+        <button onClick={onClose} aria-label="Close Popup">Close</button>
+      </div>
+    </div>
+  );
+};
+
+export default Popup; */
+
+// src/components/Hero/Popup/Popup.jsx
+
+/*import React, { useState } from 'react';
+import './Popup.css'; 
+
+const Popup = ({ data, onClose }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showTranslateOptions, setShowTranslateOptions] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [translatedText, setTranslatedText] = useState('');
+  const [simplifiedText, setSimplifiedText] = useState('');
+
+  const handleSimplify = () => {
+    setSimplifiedText(data.simplifiedText);
+  };
+
+  const handleTranslate = () => {
+    setShowTranslateOptions(!showTranslateOptions);
+  };
+
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+    setTranslatedText(data.translations[language] || '');
+    setShowTranslateOptions(false);
+  };
+
+  const handleSpeak = () => {
+    if ('speechSynthesis' in window) {
+      setIsSpeaking(true);
+      const utterance = new SpeechSynthesisUtterance(data.mainText);
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Text-to-speech is not supported in this browser.');
+    }
+  };
+
+  return (
+    <div className='popup-overlay'>
+      <div className='popup-content'>
+        <button className='popup-close' onClick={onClose} aria-label="Close Popup">X</button>
+        <h3>The Constitution of India</h3>
+        <p>{data.mainText}</p>
+        
+        <button onClick={handleSimplify} aria-label="Simplify Text">
+          Simplify
+        </button>
+        {simplifiedText && (
+          <textarea 
+            className='text-area'
+            value={simplifiedText}
+            readOnly
+            rows={4}
+            aria-label="Simplified Text"
+          />
+        )}
+
+        <button onClick={handleTranslate} aria-label="Translate Text">
+          Translate
+        </button>
+        {showTranslateOptions && (
+          <div className='translate-options'>
+            <button onClick={() => handleLanguageSelect('Hindi')} aria-label="Translate to Hindi">Hindi</button>
+            <button onClick={() => handleLanguageSelect('Bengali')} aria-label="Translate to Bengali">Bengali</button>
+            <button onClick={() => handleLanguageSelect('Urdu')} aria-label="Translate to Urdu">Urdu</button>
+          </div>
+        )}
+        {selectedLanguage && (
+          <textarea 
+            className='text-area'
+            value={translatedText}
+            readOnly
+            rows={4}
+            aria-label={`Translated Text in ${selectedLanguage}`}
+          />
+       ) }
+
+        
+        <button onClick={handleSpeak} disabled={isSpeaking} aria-label="Speak Text">
+          {isSpeaking ? 'Speaking...' : 'Speak'}
+        </button>
+
+        
+        <button onClick={onClose} aria-label="Close Popup">Close</button>
+      </div>
+    </div>
+  );
+};
+
+export default Popup;*/
+
+// src/components/Hero/Popup/Popup.jsx
+
+/*import React, { useState } from 'react';
+import './Popup.css'; 
+
+const Popup = ({ data, onClose }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showTranslateOptions, setShowTranslateOptions] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [translatedText, setTranslatedText] = useState('');
+  const [simplifiedText, setSimplifiedText] = useState('');
+
+  // Handler to start speaking the main text
+  const handleSpeak = () => {
+    if ('speechSynthesis' in window) {
+      setIsSpeaking(true);
+      const utterance = new SpeechSynthesisUtterance(data.mainText);
+
+      // When speech ends, update the state
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+
+      // Start speaking
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Text-to-speech is not supported in this browser.');
+    }
+  };
+
+  // Handler to stop speaking
+  const handleStop = () => { // *** New Function ***
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      setIsSpeaking(false); // Update the state to reflect that speaking has stopped
+    }
+  };
+
+  const handleSimplify = () => {
+    setSimplifiedText(data.simplifiedText);
+  };
+
+  const handleTranslate = () => {
+    setShowTranslateOptions(!showTranslateOptions);
+  };
+
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+    setTranslatedText(data.translations[language] || '');
+    setShowTranslateOptions(false);
+  };
+
+  return (
+    <div className='popup-overlay'>
+      <div className='popup-content'>
+     
+        <button className='popup-close' onClick={onClose} aria-label="Close Popup">X</button>
+        
+        <h3>The Constitution of India</h3>
+        <p>{data.mainText}</p>
+        
+       
+        <button onClick={handleSimplify} aria-label="Simplify Text">
+          Simplify
+        </button>
+        {simplifiedText && (
+          <textarea 
+            className='text-area'
+            value={simplifiedText}
+            readOnly
+            rows={4}
+            aria-label="Simplified Text"
+          />
+        )}
+
+        
+        <button onClick={handleTranslate} aria-label="Translate Text">
+          Translate
+        </button>
+        {showTranslateOptions && (
+          <div className='translate-options'>
+            <button onClick={() => handleLanguageSelect('Hindi')} aria-label="Translate to Hindi">Hindi</button>
+            <button onClick={() => handleLanguageSelect('Bengali')} aria-label="Translate to Bengali">Bengali</button>
+            <button onClick={() => handleLanguageSelect('Urdu')} aria-label="Translate to Urdu">Urdu</button>
+          </div>
+        )}
+        {selectedLanguage && (
+          <textarea 
+            className='text-area'
+            value={translatedText}
+            readOnly
+            rows={4}
+            aria-label={`Translated Text in ${selectedLanguage}`}
+          />
+        )}
+
+      
+        <button onClick={handleSpeak} disabled={isSpeaking} aria-label="Speak Text">
+          {isSpeaking ? 'Speaking...' : 'Speak'}
+        </button>
+
+        
+        {isSpeaking && (
+          <button 
+            onClick={handleStop} 
+            aria-label="Stop Speaking"
+            className="stop-button" // Optional: Add a class for specific styling
+          >
+            Stop
+          </button>
+        )}
+
+     
+        <button onClick={onClose} aria-label="Close Popup">Close</button>
+      </div>
+    </div>
+  );
+};
+
+export default Popup;*/
+
+// src/components/Hero/Popup/Popup.jsx
+
+// src/components/Hero/Popup/Popup.jsx
+
+import React, { useState } from 'react';
+import './Popup.css'; 
+
+const Popup = ({ data, onClose }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showTranslateOptions, setShowTranslateOptions] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [translatedText, setTranslatedText] = useState('');
+  const [simplifiedText, setSimplifiedText] = useState('');
+
+  // Handler to start speaking the main text
+  const handleSpeak = () => {
+    if ('speechSynthesis' in window) {
+      setIsSpeaking(true);
+      const utterance = new SpeechSynthesisUtterance(data.mainText);
+
+      // When speech ends, update the state
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+
+      // Start speaking
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Text-to-speech is not supported in this browser.');
+    }
+  };
+
+  // Handler to stop speaking
+  const handleStop = () => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      setIsSpeaking(false); // Update the state to reflect that speaking has stopped
+    }
+  };
+
+  const handleSimplify = () => {
+    setSimplifiedText(data.simplifiedText);
+  };
+
+  const handleTranslate = () => {
+    setShowTranslateOptions(!showTranslateOptions);
+  };
+
+  const handleLanguageSelect = (language) => {
+    if (data.translations[language]) {
+      setSelectedLanguage(language);
+      setTranslatedText(data.translations[language]);
+    } else {
+      setSelectedLanguage(language);
+      setTranslatedText('Translation not available.');
+    }
+    setShowTranslateOptions(false);
+  };
+
+  // Determine if the current data is a Preamble based on the content
+  const isPreamble = data.mainText.toLowerCase().includes('we, the people') || data.mainText.toLowerCase().includes('preamble');
+
+  return (
+    <div className='popup-overlay' role="dialog" aria-modal="true">
+      <div className='popup-content'>
+        {/* Close Button */}
+        <button className='popup-close' onClick={onClose} aria-label="Close Popup">X</button>
+        
+        {/* Conditional Heading */}
+        <h3>{isPreamble ? 'Preamble' : 'The Constitution of India'}</h3>
+        <p>{data.mainText}</p>
+        
+        {/* Simplify Button */}
+        <button onClick={handleSimplify} aria-label="Simplify Text">
+          Simplify
+        </button>
+        {simplifiedText && (
+          <textarea 
+            className='text-area'
+            value={simplifiedText}
+            readOnly
+            rows={4}
+            aria-label="Simplified Text"
+          />
+        )}
+
+        {/* Translate Button */}
+        <button onClick={handleTranslate} aria-label="Translate Text">
+          Translate
+        </button>
+        {showTranslateOptions && (
+          <div className='translate-options'>
+            <button onClick={() => handleLanguageSelect('Hindi')} aria-label="Translate to Hindi">Hindi</button>
+            <button onClick={() => handleLanguageSelect('Bengali')} aria-label="Translate to Bengali">Bengali</button>
+            <button onClick={() => handleLanguageSelect('Urdu')} aria-label="Translate to Urdu">Urdu</button>
+          </div>
+        )}
+        {selectedLanguage && (
+          <textarea 
+            className='text-area'
+            value={translatedText}
+            readOnly
+            rows={4}
+            aria-label={`Translated Text in ${selectedLanguage}`}
+          />
+        )}
+
+        {/* Speak Button */}
+        <button onClick={handleSpeak} disabled={isSpeaking} aria-label="Speak Text">
+          {isSpeaking ? 'Speaking...' : 'Speak'}
+        </button>
+
+        {/* Stop Button */}
+        {isSpeaking && (
+          <button 
+            onClick={handleStop} 
+            aria-label="Stop Speaking"
+            className="stop-button" // Optional: Add a class for specific styling
+          >
+            Stop
+          </button>
+        )}
+
+        {/* Close Button */}
+        <button onClick={onClose} aria-label="Close Popup">Close</button>
+      </div>
+    </div>
+  );
+};
+
 export default Popup;
+
+

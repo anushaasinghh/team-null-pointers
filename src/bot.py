@@ -1,4 +1,4 @@
-import warnings
+'''import warnings
 import spacy
 from flask import Flask, request, render_template
 from pymongo import MongoClient
@@ -276,4 +276,4 @@ def index():
     return render_template('index.html', message=get_greeting())
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)'''

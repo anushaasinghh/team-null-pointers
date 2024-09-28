@@ -1,4 +1,4 @@
-.options-page {
+/*.options-page {
     display: flex;
     flex-wrap: wrap; 
     color: rgb(2, 2, 2);
@@ -26,5 +26,40 @@
   
   .option-button:hover {
     background-color: #5c5e61; 
-  }
-  
+  } */
+
+  /* src/components/OptionsPage/OptionsPage.css */
+
+.options-page {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.option-button {
+  padding: 15px 25px;
+  font-size: 16px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.option-button:not(:disabled):hover {
+  background-color: #3742fa;
+}
