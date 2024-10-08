@@ -934,7 +934,7 @@ import chatImage from '../../assets/chat.jpeg';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 const customQA = {
-  BharatiyaNyayaSanhita: {
+  'Bharatiya Nyaya Sanhita': {
     'Am I guilty if I accidentally hurt someone while following the law?': 'Section Number: 18 Title: Accident in doing a lawful actContent:Nothing is an offence which is done by accident or misfortune, and without any criminal intention or knowledge, in the doing of a lawful act in a lawful manner by lawful means and with proper care and caution.',
     'What happens if someone helps another person commit a crime?' : 'Section Number: 49 Title: Punishment of abetment if act abetted is committed in consequence and where no express provision is made for its punishmentContent: Whoever abets any offence shall, if the act abetted is committed in consequence of the abetment, and no express provision is made by this Sanhita for the punishment of such abetment, be punished with the punishment provided for the offence.',
     'Can a judge decide whether prison time will be hard or easy for someone?': 'Section Number: 7 Title: Sentence may be (in certain cases of imprisonment) wholly or partly rigorous or simple. Content: In every case in which an offender is punishable with imprisonment which may be of either description, it shall be competent to the Court which sentences such offender to direct in the sentence that such imprisonment shall be wholly rigorous, or that such imprisonment shall be wholly simple, or that any part of such imprisonment shall be rigorous and the rest simple.',
@@ -1094,7 +1094,7 @@ const Chat = () => {
   const renderGreeting = () => (
     <div className="chat-content">
       <div className="quick-search">
-        <button onClick={() => handleCategorySelection('BNS')}>Bharatiya Nyaya Sanhita</button>
+        <button onClick={() => handleCategorySelection('Bharatiya Nyaya Sanhita')}>Bharatiya Nyaya Sanhita</button>
         <button onClick={() => handleCategorySelection('Constitution')}>The Constitution of India</button>
       </div>
     </div>

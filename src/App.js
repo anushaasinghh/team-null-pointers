@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Quiz from './components/Quiz/Quiz';
 //import Querynew from './components/Querynew/Querynew';
 import LawyersOnboard from './components/Queries/LawyersOnboard/LawyersOnboard';
+import SnakesLadders from './components/SnakesLadders/SnakesLadders';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Quiz/>
+      <SnakesLadders />
       <Chat/> 
      
       <Queries />

@@ -851,8 +851,8 @@ const Popup = ({ data, onClose }) => {
   // Handler to stop speaking
   const handleStop = () => {
     if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel(); // Stop any ongoing speech
-      setIsSpeaking(false); // Update the state to reflect that speaking has stopped
+      window.speechSynthesis.cancel(); 
+      setIsSpeaking(false); 
     }
   };
 
@@ -874,8 +874,6 @@ const Popup = ({ data, onClose }) => {
     }
     setShowTranslateOptions(false);
   };
-
-  // Determine if the current data is a Preamble based on the content
   const isPreamble = data.mainText.toLowerCase().includes('we, the people') || data.mainText.toLowerCase().includes('preamble');
 
   return (
@@ -883,8 +881,9 @@ const Popup = ({ data, onClose }) => {
       <div className='popup-content'>
         {/* Close Button */}
         <button className='popup-close' onClick={onClose} aria-label="Close Popup">X</button>
+        <div className='popup-body'>
         
-        {/* Conditional Heading */}
+    
         <h3>{isPreamble ? 'Preamble' : 'The Constitution of India'}</h3>
         <p>{data.mainText}</p>
         
@@ -933,13 +932,13 @@ const Popup = ({ data, onClose }) => {
           <button 
             onClick={handleStop} 
             aria-label="Stop Speaking"
-            className="stop-button" // Optional: Add a class for specific styling
+            className="stop-button" 
           >
             Stop
           </button>
         )}
+        </div>
 
-        {/* Close Button */}
         <button onClick={onClose} aria-label="Close Popup">Close</button>
       </div>
     </div>

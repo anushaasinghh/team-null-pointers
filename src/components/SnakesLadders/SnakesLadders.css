@@ -1,0 +1,59 @@
+.snakes-ladders-section {
+    padding: 60px 20px;
+    background-color: white; 
+    text-align: center;
+  }
+  
+  .snakes-ladders-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .snakes-ladders-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .snakes-ladders-image {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+  }
+  
+  .play-button {
+    padding: 12px 30px;
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .play-button:hover {
+    background-color: #0d4419;
+  }
+  
+  @media (min-width: 768px) {
+    .snakes-ladders-content {
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .snakes-ladders-image {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+  
+    .play-button {
+      margin: 0; 
+    }
+  }
+  

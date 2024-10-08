@@ -266,30 +266,50 @@
   align-items: center;
   z-index: 1000; 
 }
+.popup-body {
+  max-height: calc(80vh - 60px);
+  overflow-y: auto; 
+  flex: 1;
+  margin-top: 20px; 
+  padding-right: 10px;
+}
+.popup-body::-webkit-scrollbar {
+  width: 8px;
+}
+.popup-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
 
+.popup-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .popup-content {
-  width: 90%; /* Increased from 80% to 90% for better spacing */
+  width: 90%; 
   font-size: 1rem;
-  max-width: 1000px; /* Increased from 800px to 1000px */
+  max-width: 1000px; 
+  max-height: 80%;
   background: #fff;
   border-radius: 8px;
-  padding: 30px; /* Increased padding for better spacing */
+  padding: 30px; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  /*overflow-y: auto; */
   position: relative; 
 }
 
 .popup-close {
   position: absolute;
-  top: 15px; /* Adjusted for increased padding */
-  right: 15px; /* Adjusted for increased padding */
+  top: 15px; 
+  right: 15px; 
   background: #f44;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
-  font-size: 16px; /* Increased font size for better visibility */
+  font-size: 16px; 
 }
 
 .popup-close:hover {
@@ -297,7 +317,7 @@
 }
 
 .popup-content button {
-  margin: 10px 5px 10px 0; /* Increased margin for better spacing */
+  margin: 10px 5px 10px 0; 
   padding: 10px 20px;
   background-color: skyblue;
   color: black;
@@ -339,10 +359,8 @@
 .translate-options button {
   margin-right: 10px;
 }
-
-/* *** New CSS for Stop Button *** */
 .stop-button {
-  background-color: #ff6347; /* Tomato color */
+  background-color: #ff6347; 
   color: #fff;
 }
 
